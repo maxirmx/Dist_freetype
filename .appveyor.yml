@@ -3,11 +3,11 @@ environment:
     ZLIB_at_GIT: "https://github.com/madler/zlib"
 
 platform:
-  - x86
-  - x64
+  - amd64
 
+init:
+  - "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %platform%
 install:
-  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   # Get zlib source from GIT
   - git clone -q --branch=master %ZLIB_at_GIT% zlib
    
