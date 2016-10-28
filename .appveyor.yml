@@ -8,6 +8,7 @@ platform:
 init:
   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %platform%'
   - 'dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"'
+  - SET
 install:
   # Get zlib source from GIT
   - git clone -q --branch=master %ZLIB_at_GIT% zlib
