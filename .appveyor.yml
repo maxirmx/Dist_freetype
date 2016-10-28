@@ -1,10 +1,11 @@
 environment:
   global:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
-    ZLIB_at_GIT: "https://github.com/madler/zlib"
+    ZLib_repo: "https://github.com/madler/zlib"
 
 platform:
   - x86
+  - amd64
 
 init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
@@ -12,12 +13,13 @@ init:
   # SET
 install:
   # Get zlib source from GIT
-  - git clone -q --branch=master %ZLIB_at_GIT% zlib
+  - git clone -q --branch=master %ZLib_repo% zlib
    
 build_script:                                                                                   
   # Build
    - cd zlib
-   - nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"  
+   - if %platform%==x86   nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
+   - if %platform%==amd64 nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj
 
 on_success:
   # "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%f"
