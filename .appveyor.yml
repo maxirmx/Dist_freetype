@@ -3,7 +3,7 @@ environment:
     ZLIB_at_GIT: "https://github.com/madler/zlib"
 
 platform:
-  - amd64
+  - x86
 
 init:
   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %platform%'
