@@ -6,7 +6,7 @@ platform:
   - amd64
 
 init:
-  - "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %platform%
+  - ' "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %platform% '
 install:
   # Get zlib source from GIT
   - git clone -q --branch=master %ZLIB_at_GIT% zlib
