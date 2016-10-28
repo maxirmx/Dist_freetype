@@ -1,13 +1,13 @@
 environment:
   global:
-    VisualStudio: "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
+    VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
     ZLIB_at_GIT: "https://github.com/madler/zlib"
 
 platform:
   - x86
 
 init:
-  - '%VisualStudio%\vcvarsall.bat %platform%'
+  - %VisualStudio%\vcvarsall.bat %platform%
   # 'dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"'
   # SET
 install:
