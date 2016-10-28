@@ -8,8 +8,8 @@ platform:
 
 install:
   # Get zlib source from GIT
-  - @mkdir zlib
-  - @dir
+  - "@mkdir zlib:
+  - "@dir"
  
 build_script:                                                                                   
   # Build
