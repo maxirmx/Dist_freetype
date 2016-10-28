@@ -8,25 +8,10 @@ platform:
 
 install:
   # Get zlib source from GIT
-  - mkdir zlib
-  - dir
+  - @mkdir zlib
+  - @dir
  
-  # Prepend newly installed Python to the PATH of this build (this cannot be
-  # done from inside the powershell script as it would require to restart
-  # the parent CMD process)
-  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
-
-  # Upgrade to the latest version of conda and install dependencies to build and upload packages
-  # conda config --set always_yes yes --set changeps1 no
-  # Install the build and test prerequisites
-  # conda install -q conda-build anaconda-client
-  # conda config --add channels spacy
-  # conda config --add channels henningpeters
-  # conda config --add channels maxirmx
-
 build_script:                                                                                   
-  # Check that we have the expected version and architecture for conda
-  # conda info -a
   # Build
    - echo Hi
 
