@@ -9,11 +9,10 @@ platform:
 install:
   # Get zlib source from GIT
   - git clone -q --branch=master %ZLIB_at_GIT% zlib
-  - dir zlib
- 
+   
 build_script:                                                                                   
   # Build
-   - echo Hi
+   - nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"  
 
 on_success:
   # "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%f"
