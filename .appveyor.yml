@@ -12,20 +12,6 @@ environment:
       PYTHON_VERSION: "2.7.10"
       PYTHON_ARCH: "64"
 
-    - PYTHON: "C:\\Python27.10-x32"
-      PYTHON_VERSION: "2.7.10"
-      PYTHON_ARCH: "32"
-
-    # The lastest Python 3.4.
-    - PYTHON: "C:\\Python34-x64" 
-      PYTHON_VERSION: "3.4.x" # currently 3.4.3 
-      PYTHON_ARCH: "64" 
-
-    - PYTHON: "C:\\Python34-x32" 
-      PYTHON_VERSION: "3.4.x" # currently 3.4.3 
-      PYTHON_ARCH: "32" 
-
-
 install:
   # Checking submodule(s) out
   - git submodule update --init --remote
@@ -49,7 +35,7 @@ build_script:
   # Check that we have the expected version and architecture for conda
   # conda info -a
   # Build
-  # "%CMD_IN_ENV% conda build -q --no-anaconda-upload ."
+   - echo Hi
 
 on_success:
   # "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%f"
