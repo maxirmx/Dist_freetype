@@ -1,7 +1,7 @@
 environment:
   global:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
-    ZLib_repo: "https://github.com/madler/zlib"
+    Libpng_repo: "http://github.com/glennrp/libpng-releases"
 
 platform:
   - x86
@@ -12,23 +12,23 @@ init:
 
 install:
   # Get zlib source from GIT
-  - git clone -q --branch=master %ZLib_repo% zlib
+  - appveyor DownloadFile %Libpng_repo%/raw/master/lpng1623.7z 
    
 build_script:                                                                                   
   # Build
    - echo %platform%
-   - cd zlib
-   - if %platform%==x86 nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
-   - if %platform%==X64 nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj
-   - cd ..
+   # cd zlib
+   # if %platform%==x86 nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
+   # if %platform%==X64 nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj
+   # cd ..
    
 test: off
 
 artifacts:
-   - path: zlib\zlib.lib
-   - path: zlib\zlib1.dll
-   - path: zlib\zdll.lib
-   - path: zlib\zlib.h
+   # path: zlib\zlib.lib
+   # path: zlib\zlib1.dll
+   # path: zlib\zdll.lib
+   # path: zlib\zlib.h
 
 on_success:
   # "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%f"
