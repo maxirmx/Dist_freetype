@@ -17,7 +17,7 @@ install:
   - cd lpng1623
   - mkdir zlib
   - cd zlib
-  - appveyor DownloadFile "https://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform%3A+x86"
+  - curl "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform%3A+x86"
   - 7z e zlib
   - cd ..
    
@@ -25,11 +25,8 @@ build_script:
   # Build
    - echo %platform%
    - dir
-   - nmfkt -f scripts/makefile.vcwin32
-   # if %platform%==x86 nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
-   # if %platform%==X64 nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj
-   # cd ..
-   
+   - nmake -f scripts/makefile.vcwin32
+  
 test: off
 
 #artifacts:
@@ -38,5 +35,3 @@ test: off
    # path: zlib\zdll.lib
    # path: zlib\zlib.h
 
-#on_success:
-  # "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%f"
