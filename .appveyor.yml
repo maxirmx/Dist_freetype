@@ -12,11 +12,13 @@ init:
 
 install:
   # Get zlib source from GIT
-  - appveyor DownloadFile %Libpng_repo%/raw/master/lpng1623.7z 
+  - appveyor DownloadFile %Libpng_repo%/raw/master/lpng1623.7z
+  - 7z x lpng1623.7z
    
 build_script:                                                                                   
   # Build
    - echo %platform%
+   - dir
    # cd zlib
    # if %platform%==x86 nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"
    # if %platform%==X64 nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj
