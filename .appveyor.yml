@@ -17,8 +17,8 @@ install:
   - cd lpng1623
   - mkdir zlib
   - cd zlib
-  - echo "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform%%3A+x86"
-  - curl "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform%%3A+x86"
+  - echo "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform:x86"
+  - curl "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform:86"
   - 7z e zlib
   - cd ..
    
