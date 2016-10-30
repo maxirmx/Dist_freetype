@@ -11,9 +11,15 @@ init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
-  # Get zlib source from GIT
+  # Get libpng source from GIT
   - appveyor DownloadFile %Libpng_repo%/raw/master/lpng1623.7z
   - 7z x lpng1623.7z
+  - cd lpng1623
+  - mkdir zlib
+  - cd zlib
+  - appveyor DownloadFile https://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform%3A+x86
+  - 7z e zlib
+  - cd ..
    
 build_script:                                                                                   
   # Build
