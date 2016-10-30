@@ -24,11 +24,11 @@ build_script:
    
 test: off
 
-artifacts:
+#artifacts:
    # path: zlib\zlib.lib
    # path: zlib\zlib1.dll
    # path: zlib\zdll.lib
    # path: zlib\zlib.h
 
-on_success:
+#on_success:
   # "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%f"
