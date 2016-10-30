@@ -14,7 +14,6 @@ install:
   # Get libpng source from GIT
   - appveyor DownloadFile %Libpng_repo%/raw/master/lpng1623.7z
   - 7z x lpng1623.7z
-  - cd lpng1623
   - mkdir zlib
   - cd zlib
   - appveyor DownloadFile "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform:+x86"
@@ -23,9 +22,9 @@ install:
    
 build_script:                                                                                   
   # Build
-   - echo %platform%
-   - dir zlib
-   - nmake -f scripts/makefile.vcwin32
+  - echo %platform%
+  - cd lpng1623   
+  - nmake -f scripts/makefile.vcwin32
   
 test: off
 
