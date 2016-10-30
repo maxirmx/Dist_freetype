@@ -18,7 +18,7 @@ install:
   - mkdir zlib
   - cd zlib
   - echo "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform:x86"
-  - curl "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform:86"
+  - curl "http://ci.appveyor.com/api/projects/maxirmx/Dist-zlib/artifacts/zlib.7z?job=platform:x86"
   - 7z e zlib
   - cd ..
    
