@@ -18,6 +18,7 @@ install:
    
 build_script:                                                                                   
   # Build
+  - SET
   - C:\MinGW\bin\mingw32-make -f %TOP_DIR%\builds\windows\w32-vcc.mk
   
 test: off
