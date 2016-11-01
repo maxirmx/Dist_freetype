@@ -1,7 +1,7 @@
 environment:
   global:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
-    TOP_DIR: freetype-2.7
+    TOP_DIR: "freetype-2.7"
 
 platform:
   - x86
