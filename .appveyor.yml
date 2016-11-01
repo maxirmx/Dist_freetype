@@ -13,6 +13,7 @@ install:
   # Get libpng source from GIT
   - appveyor DownloadFile http://download.savannah.gnu.org/releases/freetype/freetype-2.7.tar.gz
   - 7z x freetype-2.7.tar.gz
+  - 7z x freetype-2.7.tar
    
 build_script:                                                                                   
   # Build
