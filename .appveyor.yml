@@ -18,7 +18,7 @@ install:
 build_script:                                                                                   
   # Build
   - cd freetype-2.7
-  - C:\MinGW\bin\mingw32-make -f freetype-2.7\builds\windows\w32-vcc.mk
+  - C:\MinGW\bin\mingw32-make -f builds\windows\w32-vcc.mk
   
 test: off
 
