@@ -19,7 +19,7 @@ install:
 build_script:                                                                                   
   # Build
   - SET
-  - C:\MinGW\bin\mingw32-make -f %TOP_DIR%\builds\windows\w32-vcc.mk
+  - C:\MinGW\bin\mingw32-make -f freetype-2.7\builds\windows\w32-vcc.mk
   
 test: off
 
