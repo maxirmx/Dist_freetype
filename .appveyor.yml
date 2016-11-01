@@ -1,6 +1,7 @@
 environment:
   global:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
+    TOP_DIR: freetype-2.7
 
 platform:
   - x86
@@ -17,7 +18,6 @@ install:
    
 build_script:                                                                                   
   # Build
-  - SET TOP_DIR=freetype-2.7
   - C:\MinGW\bin\mingw32-make -f %TOP_DIR%\builds\windows\w32-vcc.mk
   
 test: off
