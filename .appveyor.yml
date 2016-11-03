@@ -17,8 +17,9 @@ install:
    
 build_script:                                                                                   
   # Build
+  - copy /Y toplevel.mk freetype-2.7\builds\toplevel.mk
   - cd freetype-2.7
-  - SET SHELL=powershell && SET HOME=. && C:\MinGW\bin\mingw32-make 
+  - C:\MinGW\bin\mingw32-make 
   # ps: type builds\newline
   # ps: type ./include/freetype/freetype.h
   
