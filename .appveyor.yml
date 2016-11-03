@@ -18,9 +18,9 @@ install:
 build_script:                                                                                   
   # Build
   - cd freetype-2.7
-  # C:\MinGW\bin\mingw32-make 
-  - ps: type builds\newline
-  - ps: type ./include/freetype/freetype.h
+  - ps: C:\MinGW\bin\mingw32-make 
+  # ps: type builds\newline
+  # ps: type ./include/freetype/freetype.h
   
 test: off
 
