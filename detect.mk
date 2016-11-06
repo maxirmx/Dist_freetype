@@ -134,20 +134,20 @@ std_setup:
 dos_setup:
 	@cmd /C type builds$(SEP)newline
 	@echo $(PROJECT_TITLE) build system -- automatic system detection
-	@shell type builds$(SEP)newline
+	@cmd /C type builds$(SEP)newline
 	@echo The following settings are used:
-	@type builds$(SEP)newline
+	@cmd /C type builds$(SEP)newline
 	@echo   platformÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ$(PLATFORM)
 	@echo   compilerÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ$(CC)
 	@echo   configuration directoryÿÿÿÿÿÿ$(subst /,$(SEP),$(BUILD_DIR))
 	@echo   configuration rulesÿÿÿÿÿÿÿÿÿÿ$(subst /,$(SEP),$(CONFIG_RULES))
-	@type builds$(SEP)newline
+	@cmd /C type builds$(SEP)newline
 	@echo If this does not correspond to your system or settings please remove the file
 	@echo '$(CONFIG_MK)' from this directory then read the INSTALL file for help.
-	@type builds$(SEP)newline
+	@cmd /C type builds$(SEP)newline
 	@echo Otherwise, simply type 'make' again to build the library.
 	@echo or 'make refdoc' to build the API reference (this needs python >= 2.6).
-	@type builds$(SEP)newline
+	@cmd /C type builds$(SEP)newline
 	@$(COPY) $(subst /,$(SEP),$(CONFIG_RULES) $(CONFIG_MK)) > nul
 
 
