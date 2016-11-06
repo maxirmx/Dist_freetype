@@ -17,10 +17,11 @@ install:
    
 build_script:                                                                                   
   # Build
-  # copy /Y toplevel.mk freetype-2.7\builds\toplevel.mk
-  # cd freetype-2.7
-  # C:\MinGW\bin\mingw32-make 
-  - dir C:\MinGW\bin
+  copy /Y toplevel.mk freetype-2.7\builds\toplevel.mk
+  copy /Y detect.mk freetype-2.7\builds\detect.mk
+  cd freetype-2.7
+  C:\MinGW\bin\mingw32-make 
+  # dir C:\MinGW\bin
   # ps: type builds\newline
   # ps: type ./include/freetype/freetype.h
   
