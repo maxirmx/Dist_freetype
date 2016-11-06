@@ -131,11 +131,10 @@ std_setup:
 
 # Special case for Dos, Windows, OS/2, where echo "" doesn't work correctly!
 #
-dos_setup:
-	@dir
-	@cmd /C type .$(SEP)builds$(SEP)newline
+dos_setu
+	@cmd /C type builds$(SEP)newline
 	@echo $(PROJECT_TITLE) build system -- automatic system detection
-	@type builds$(SEP)newline
+	@shell type builds$(SEP)newline
 	@echo The following settings are used:
 	@type builds$(SEP)newline
 	@echo   platformÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ$(PLATFORM)
