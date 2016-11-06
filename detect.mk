@@ -133,7 +133,7 @@ std_setup:
 #
 dos_setup:
 	@dir
-	@cmd type .$(SEP)builds$(SEP)newline
+	@cmd /C type .$(SEP)builds$(SEP)newline
 	@echo $(PROJECT_TITLE) build system -- automatic system detection
 	@type builds$(SEP)newline
 	@echo The following settings are used:
