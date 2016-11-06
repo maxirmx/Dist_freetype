@@ -132,6 +132,7 @@ std_setup:
 # Special case for Dos, Windows, OS/2, where echo "" doesn't work correctly!
 #
 dos_setup:
+    @dir 
 	@type .$(SEP)builds$(SEP)newline
 	@echo $(PROJECT_TITLE) build system -- automatic system detection
 	@type builds$(SEP)newline
