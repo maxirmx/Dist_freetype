@@ -131,7 +131,7 @@ std_setup:
 
 # Special case for Dos, Windows, OS/2, where echo "" doesn't work correctly!
 #
-dos_setu
+dos_setup:
 	@cmd /C type builds$(SEP)newline
 	@echo $(PROJECT_TITLE) build system -- automatic system detection
 	@shell type builds$(SEP)newline
