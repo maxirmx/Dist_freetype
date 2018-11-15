@@ -22,7 +22,7 @@ build_script:
   - mkdir build
   - cd build
   - cmake --version
-  #  cmake .. -G %generator%
+  - cmake .. 
   # dir C:\MinGW\bin
   # ps: type builds\newline
   # ps: type ./include/freetype/freetype.h
