@@ -12,7 +12,6 @@ init:
 install:
   # Get podofo source from Source Forge  (-L option is required to follow redirects)
   - curl -L  https://sourceforge.net/projects/podofo/files/podofo/0.9.6/podofo-0.9.6.tar.gz > podofo-0.9.6.tar.gz
-  - appveyor DownloadFile http://download.savannah.gnu.org/releases/freetype/freetype-2.7.tar.gz
   - 7z x podofo-0.9.6.tar.gz
   - 7z x podofo-0.9.6.tar
    
