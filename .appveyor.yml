@@ -19,7 +19,10 @@ build_script:
   - dir
   - cd podofo-0.9.6
   - dir
-  - cmake -version
+  - mkdir build
+  - cd build
+  - cmake --version
+  #  cmake .. -G %generator%
   # dir C:\MinGW\bin
   # ps: type builds\newline
   # ps: type ./include/freetype/freetype.h
