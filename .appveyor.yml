@@ -10,17 +10,16 @@ init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
-  # Get libpng source from GIT
+  # Get podofo source from Source Forge  (-L option is required to follow redirects)
+  - curl -L  https://sourceforge.net/projects/podofo/files/podofo/0.9.6/podofo-0.9.6.tar.gz > podofo-0.9.6.tar.gz
   - appveyor DownloadFile http://download.savannah.gnu.org/releases/freetype/freetype-2.7.tar.gz
-  - 7z x freetype-2.7.tar.gz
-  - 7z x freetype-2.7.tar
+  - 7z x podofo-0.9.6.tar.gz
+  - 7z x podofo-0.9.6.tar
    
-build_script:                                                                                   
-  # Build
-  - copy /Y toplevel.mk freetype-2.7\builds\toplevel.mk
-  - copy /Y detect.mk freetype-2.7\builds\detect.mk
-  - cd freetype-2.7
-  - C:\MinGW\bin\mingw32-make 
+build_script:
+  - dir
+  - cd podofo-0.9.6
+  - dir
   # dir C:\MinGW\bin
   # ps: type builds\newline
   # ps: type ./include/freetype/freetype.h
