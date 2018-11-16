@@ -22,6 +22,7 @@ install:
   - dir
   - cd ..   
 build_script:
+  - SET ZLIB_INCLUDE_DIR C:\projects\alpha\zlib\include
   - dir
   - cd podofo-0.9.6
   - dir
