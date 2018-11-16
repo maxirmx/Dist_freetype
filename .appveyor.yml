@@ -19,16 +19,13 @@ install:
   - cd zlib
   - curl -L http://www.samsonov.net/wp?kcccount=http://www.samsonov.net/wp/assets/Dist_zlib/X64-release/zlib.7z > zlib.7z
   - 7z x zlib.7z
-  - dir
   - cd ..   
 build_script:
   - SET ZLIB_INCLUDE_DIR= C:\projects\alpha\zlib\include
-  - dir
+  - SET ZLIB_LIBRARY= C:\projects\alpha\zlib\lib
   - cd podofo-0.9.6
-  - dir
   - mkdir build
   - cd build
-  - cmake --version
   - cmake .. 
   
 test: off
