@@ -22,7 +22,7 @@ install:
   - dir
   - cd ..   
 build_script:
-  - SET ZLIB_INCLUDE_DIR C:\projects\alpha\zlib\include
+  - SET ZLIB_INCLUDE_DIR= C:\projects\alpha\zlib\include
   - dir
   - cd podofo-0.9.6
   - dir
@@ -30,9 +30,6 @@ build_script:
   - cd build
   - cmake --version
   - cmake .. 
-  # dir C:\MinGW\bin
-  # ps: type builds\newline
-  # ps: type ./include/freetype/freetype.h
   
 test: off
 
