@@ -14,7 +14,13 @@ install:
   - curl -L  https://sourceforge.net/projects/podofo/files/podofo/0.9.6/podofo-0.9.6.tar.gz > podofo-0.9.6.tar.gz
   - 7z x podofo-0.9.6.tar.gz
   - 7z x podofo-0.9.6.tar
-   
+  # Get zlib  
+  - mkdir zlib
+  - cd zlib
+  - curl -L http://www.samsonov.net/wp?kcccount=http://www.samsonov.net/wp/assets/Dist_zlib/X64-release/zlib.7z > zlib.7z
+  - 7z x zlib.7z
+  - dir
+  - cd ..   
 build_script:
   - dir
   - cd podofo-0.9.6
