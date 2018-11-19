@@ -27,7 +27,7 @@ install:
   - cd ..
 build_script:
   - SET INCLUDE=%APPVEYOR_BUILD_FOLDER%\zlib\include;%APPVEYOR_BUILD_FOLDER%\freetype2\include;%INCLUDE%
-  - SET PATH=%APPVEYOR_BUILD_FOLDER%\zlib\bin;%PATH%
+  - SET PATH=%APPVEYOR_BUILD_FOLDER%\zlib\bin;%APPVEYOR_BUILD_FOLDER%\freetype2\win64;%PATH%
   - SET
   - cd podofo-0.9.6
   - mkdir build
