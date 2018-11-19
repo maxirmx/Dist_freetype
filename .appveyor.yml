@@ -19,10 +19,9 @@ install:
   - cd zlib
   - curl -L http://www.samsonov.net/wp?kcccount=http://www.samsonov.net/wp/assets/Dist_zlib/X64-release/zlib.7z > zlib.7z
   - 7z x zlib.7z
-  - dir
   - cd ..   
+  # Get freetype  
   - git clone https://github.com/ubawurinna/freetype-windows-binaries freetype2
-  - dir
   - cd freetype2
   - dir
   - cd ..
