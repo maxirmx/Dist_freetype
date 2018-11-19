@@ -21,8 +21,9 @@ install:
   - 7z x zlib.7z
   - cd ..   
 build_script:
-  - SET ZLIB_INCLUDE_DIR= C:\projects\alpha\zlib\include
-  - SET ZLIB_LIBRARY= C:\projects\alpha\zlib\lib
+  - SET
+  - SET INCLUDE= C:\projects\alpha\zlib\include;%INCLUDE%
+  - SET LIB= C:\projects\alpha\zlib\lib;%LIB%
   - cd podofo-0.9.6
   - mkdir build
   - cd build
