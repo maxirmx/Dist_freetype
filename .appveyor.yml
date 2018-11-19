@@ -24,6 +24,7 @@ build_script:
   - SET
   - SET INCLUDE= C:\projects\alpha\zlib\include;%INCLUDE%
   - SET PATH= C:\projects\alpha\zlib\lib;%PATH%
+  - SET
   - cd podofo-0.9.6
   - mkdir build
   - cd build
