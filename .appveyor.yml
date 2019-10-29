@@ -1,40 +1,31 @@
 environment:
   global:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
-    
+    freetype_version: "2-10-1"
+  matrix:
+  - configuration: release
+  - configuration: debug
+  
 platform:
-  # x86
+  - x86
   - amd64
 
 init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
-#http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/freetype2-VER-2-10-1.tar.gz
-
-# Get podofo source from Source Forge  (-L option is required to follow redirects)
-  - curl -L  https://sourceforge.net/projects/podofo/files/podofo/0.9.6/podofo-0.9.6.tar.gz > podofo-0.9.6.tar.gz
-  - 7z x podofo-0.9.6.tar.gz
-  - 7z x podofo-0.9.6.tar
-  # Get zlib  
+  # Get libpng source from GIT
+  - appveyor DownloadFile http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/freetype2-VER-%freetype_version%.tar.gz
+  - 7z x freetype2-VER-%freetype_version%.tar.gz
+  - 7z x -ofreetype freetype2-VER-%freetype_version%.tar
   - mkdir zlib
   - cd zlib
-  - curl -L http://www.samsonov.net/wp?kcccount=http://www.samsonov.net/wp/assets/Dist_zlib/X64-release/zlib.7z > zlib.7z
-  - 7z x zlib.7z
-  - cd ..   
-  # Get freetype  
-  - git clone https://github.com/ubawurinna/freetype-windows-binaries freetype2
-  - cd freetype2
-  - dir
+  - appveyor DownloadFile "http://www.samsonov.net/wp/assets/Dist_zlib/%platform%-release/zlib.7z"
+  - 7z e zlib.7z
   - cd ..
+  
 build_script:
-  - SET INCLUDE=%APPVEYOR_BUILD_FOLDER%\zlib\include;%APPVEYOR_BUILD_FOLDER%\freetype2\include;%INCLUDE%
-  - SET PATH=%APPVEYOR_BUILD_FOLDER%\zlib\bin;%APPVEYOR_BUILD_FOLDER%\freetype2\win64;%PATH%
-  - SET
-  - cd podofo-0.9.6
-  - mkdir build
-  - cd build
-  - cmake .. 
+  - cmake  
   
 test: off
 
