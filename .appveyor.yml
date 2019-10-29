@@ -10,7 +10,9 @@ init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
-  # Get podofo source from Source Forge  (-L option is required to follow redirects)
+#http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/freetype2-VER-2-10-1.tar.gz
+
+# Get podofo source from Source Forge  (-L option is required to follow redirects)
   - curl -L  https://sourceforge.net/projects/podofo/files/podofo/0.9.6/podofo-0.9.6.tar.gz > podofo-0.9.6.tar.gz
   - 7z x podofo-0.9.6.tar.gz
   - 7z x podofo-0.9.6.tar
