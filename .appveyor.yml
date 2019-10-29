@@ -23,9 +23,11 @@ install:
   - appveyor DownloadFile "http://www.samsonov.net/wp/assets/Dist_zlib/%platform%-release/zlib.7z"
   - 7z e zlib.7z
   - cd ..
+  - mkdir build
   
 build_script:
-  - cmake  
+  - cmake  -E chdir build cmake -G "NMake Makefiles" ..
+  - cmake --build build  
   
 test: off
 
