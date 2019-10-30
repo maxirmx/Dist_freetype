@@ -3,11 +3,11 @@ environment:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
     freetype_version: "2-10-1"
   matrix:
-  - configuration: release
+  # configuration: release
   - configuration: debug
   
 platform:
-  - x86
+  # x86
   - amd64
 
 init:
