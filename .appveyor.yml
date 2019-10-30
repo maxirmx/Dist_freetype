@@ -4,21 +4,21 @@ environment:
     freetype_version: "2-10-1"
   matrix:
   - library: static
-  - library: shared
+  # library: shared
   
 platform:
-  - x86
+  # x86
   - amd64
   
 configuration:
-  - release
+  # release
   - debug
 
 init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
-  # Get libpng source from GIT
+  # Get freetype2 source from GIT
   - appveyor DownloadFile http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/freetype2-VER-%freetype_version%.tar.gz
   - 7z x freetype2-VER-%freetype_version%.tar.gz
   - 7z x freetype2-VER-%freetype_version%.tar
