@@ -12,7 +12,7 @@ platform:
   
 configuration:
   # configuration: release
-  - configuration: debug
+  - debug
 
 init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
