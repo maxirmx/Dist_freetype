@@ -5,6 +5,8 @@ environment:
   matrix:
   # configuration: release
   - configuration: debug
+  - library: static
+  - library: shared
   
 platform:
   # x86
