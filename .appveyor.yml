@@ -3,14 +3,16 @@ environment:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
     freetype_version: "2-10-1"
   matrix:
-  # configuration: release
-  - configuration: debug
   - library: static
   - library: shared
   
 platform:
   # x86
   - amd64
+  
+configuration:
+  # configuration: release
+  - configuration: debug
 
 init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
