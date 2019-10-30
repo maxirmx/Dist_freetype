@@ -25,6 +25,7 @@ install:
   - cd ..
   
 build_script:
+  - dir
   - cmake  -E chdir freetype cmake -G "NMake Makefiles" ..
   - cmake --build freetype  
   
