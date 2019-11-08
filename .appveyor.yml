@@ -23,7 +23,7 @@ install:
   - 7z x freetype2-VER-%freetype_version%.tar.gz
   - 7z x freetype2-VER-%freetype_version%.tar
   - ren freetype2-VER-%freetype_version% freetype
-  - ps: './load-libraries.ps1 %platform%'
+  - ps: ./load-libraries.ps1 $env:platform
   
 build_script:
   - cd freetype
