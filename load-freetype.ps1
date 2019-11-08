@@ -2,7 +2,7 @@ param (
   [string] $version="2-10-1"
 )
 
-$fname  = "freetype2-VER-" + $version" 
+$fname  = "freetype2-VER-" + $version 
 $fname1 =  $fname  + ".tar"
 $fname2 =  $fname1 + ".gz"
 
