@@ -5,9 +5,10 @@ param (
 $fname  = "freetype2-VER-" + $version 
 $fname1 =  $fname  + ".tar"
 $fname2 =  $fname1 + ".gz"
+$uri    =  "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/" + $fname2
 
 
-Invoke-WebRequest -Uri "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/" + $fname2 -OutFile $fname2
+Invoke-WebRequest -Uri $uri -OutFile $fname2
 & "C:\Program Files\7-Zip\7z" -aoa x $fname2 
 & "C:\Program Files\7-Zip\7z" -aoa x $fname1 
 del $fname2
