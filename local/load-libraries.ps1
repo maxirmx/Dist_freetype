@@ -10,17 +10,27 @@ function load {
   )
 
   $fname = $libname +".7z"
+  $dname = $libname
   $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $mode + "/" + $fname
   
   echo "Ready to go for " + $uri
 
-  & "IF NOT EXIST " + $libname + " mkdir " +  $libname
-  cd $libname
+  New-Item -ItemType Directory -Force -Path $dname
+
+  cd $dname
 
   Invoke-WebRequest -Uri $uri -OutFile $fname
-  & "C:\Program Files\7-Zip\7z" x $fname
+  & "C:\Program Files\7-Zip\7z" -aoa x $fname
+  del $fname
 
   cd ..
+}
+
+switch($platform) {
+   "X64"   { break; } 
+   "x86"   { break; } 
+   "amd64" { $platform = "X64"; break; } 
+   default { "Platform was not recognized @ 'load-libraries.ps1' : " + $platform; exit (-1);  } 
 }
 
 load "zlib"  $platform "release"

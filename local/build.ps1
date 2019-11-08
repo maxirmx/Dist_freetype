@@ -2,8 +2,6 @@ param (
   [string]$platform="amd64"
 )
 
-
-
 # Invokes a Cmd.exe shell script and updates the environment.
 function Invoke-CmdScript {
   param(
@@ -18,11 +16,18 @@ function Invoke-CmdScript {
   }
 }
 
+switch($platform) {
+   "X64"   { $platform = "amd64"; break;  } 
+   "x86"   { break; } 
+   "amd64" { break; } 
+   default { "Platform was not recognized @ 'build.ps1' : " + $platform; exit (-1);  } 
+}
+
+$dname = "build"
+
 Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" $platform
-& "cd" freetype
-"1"
-& "mkdir" build
-"2"
-& "C:\Program Files\CMake\bin\cmake" -E chdir build cmake -G "NMake Makefiles" ..
-"3"
-& "C:\Program Files\CMake\bin\cmake" --build build 
+cd freetype
+New-Item -ItemType Directory -Force -Path $dname
+
+& "C:\Program Files\CMake\bin\cmake" -E chdir $dname cmake -G "NMake Makefiles" ..
+& "C:\Program Files\CMake\bin\cmake" --build $dname 
