@@ -4,4 +4,4 @@ This is a project to create <a href="https://www.freetype.org/"> freetype2 </a> 
 
 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/8p3tj9a2l1vmgt0x?svg=true)](https://ci.appveyor.com/project/maxirmx/alpha/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/8p3tj9a2l1vmgt0x?svg=true)](https://ci.appveyor.com/project/maxirmx/Dist_freetype2/branch/master)
