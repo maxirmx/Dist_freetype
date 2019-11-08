@@ -19,10 +19,7 @@ init:
 
 install:
   # Get freetype2 source from GIT
-  - appveyor DownloadFile http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/freetype2-VER-%freetype_version%.tar.gz
-  - 7z x freetype2-VER-%freetype_version%.tar.gz
-  - 7z x freetype2-VER-%freetype_version%.tar
-  - ren freetype2-VER-%freetype_version% freetype
+  - ps: ./load-freetype.ps1 $env:freetype_version
   - ps: ./load-libraries.ps1 $env:platform
   
 build_script:
