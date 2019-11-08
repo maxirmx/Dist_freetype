@@ -20,11 +20,11 @@ init:
 install:
   # Get freetype2 source from GIT
   - ps: ./load-freetype.ps1 $env:freetype_version
+  # Load libraries (zlib, libpng)
   - ps: ./load-libraries.ps1 $env:platform
   
 build_script:
   - cd freetype
-  - dir
   - mkdir build
   - cmake  -E chdir build cmake -G "NMake Makefiles" ..
   - cmake --build build  
