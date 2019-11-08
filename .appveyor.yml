@@ -23,11 +23,7 @@ install:
   - 7z x freetype2-VER-%freetype_version%.tar.gz
   - 7z x freetype2-VER-%freetype_version%.tar
   - ren freetype2-VER-%freetype_version% freetype
-  - mkdir zlib
-  - cd zlib
-  - appveyor DownloadFile "http://www.samsonov.net/wp/assets/Dist_zlib/%platform%-release/zlib.7z"
-  - 7z e zlib.7z
-  - cd ..
+  - ./load-libraries.ps1 %platform%
   
 build_script:
   - cd freetype
