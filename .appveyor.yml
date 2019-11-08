@@ -7,7 +7,7 @@ environment:
   # library: shared
   
 platform:
-  # x86
+  - x86
   - amd64
   
 configuration:
