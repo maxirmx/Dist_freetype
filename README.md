@@ -1,5 +1,5 @@
 # alpha
-This is a project to create <a href="http://www.libpng.org/pub/png/libpng.html"> Dist_freetype2 </a> Windows binaries using <a href="https://www.appveyor.com">AppVeyor</a><br />
+This is a project to create <a href="https://www.freetype.org/"> Dist_freetype2 </a> Windows binaries using <a href="https://www.appveyor.com">AppVeyor</a><br />
 
 
 
