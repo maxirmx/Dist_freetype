@@ -1,1 +1,1 @@
-powershell -ExecutionPolicy Bypass %1
+powershell -ExecutionPolicy Bypass %*
