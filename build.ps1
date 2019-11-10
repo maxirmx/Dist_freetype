@@ -35,24 +35,29 @@ function CmdScript {
    default   { "build.ps1: configuration <" + $configuration + "> was not recognized"; exit (-1);  } 
  }
 
-
  $dname = "build"
 
  if ($configure) {
   CmdScript "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" $platform
+  $cmake = "C:\Program Files\CMake\bin\cmake" 
+ } else {
+  $cmake = "cmake"
  }
 
  cd freetype
  New-Item -ItemType Directory -Force -Path $dname
  cd $dname
 
- $buildcmd =  @("-D","ZLIB_LIBRARY=../../zlib/lib",
+ $bp1 =  @("-D","ZLIB_LIBRARY=../../zlib/lib",
                 "-D","ZLIB_INCLUDE_DIR=../../zlib/include", 
                 "-D","PNG_LIBRARY=../../libpng/lib",
                 "-D","PNG_PNG_INCLUDE_DIR=../../libpng/include",
                 "-G","""NMake Makefiles""",
                 "..")
 
- & "C:\Program Files\CMake\bin\cmake" $buildcmd
- & "C:\Program Files\CMake\bin\cmake" --build .
+ $bp2 =  @("--build", ".")
+
+ & $cmake  $bp1
+ & $cmake  $bp2
+
  cd .. 
