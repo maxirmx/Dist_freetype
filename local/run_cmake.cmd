@@ -1,1 +1,0 @@
-cmake . -DZLIB_LIBRARY_RELEASE=D:\G\zlib\lib-x86  -DZLIB_INCLUDE_DIR=D:\G\zlib\include -DFREETYPE_LIBRARY_RELEASE=D:\G\freetype\lib -DFREETYPE_INCLUDE_DIR=D:\G\freetype\include -DPODOFO_BUILD_LIB_ONLY=1
