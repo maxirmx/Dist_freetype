@@ -1,17 +1,21 @@
 param (
-  [string] $platform="X64"
+#  platform: either 'X64' or 'x86'
+#            'amd64' is accepted as well and converted to 'X64'
+   [parameter(Mandatory=$false)][string]$platform="X64",
+#  platform: either 'debug' or 'release'
+   [parameter(Mandatory=$false)][string]$configuration="debug"
 )
 
 function load {
   param (
     [string] $libname,
     [string] $platform = "X64",
-    [string] $mode = "release"
+    [string] $configuration = "debug"
   )
 
   $fname = $libname +".7z"
   $dname = $libname
-  $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $mode + "/" + $fname
+  $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $configuration + "/" + $fname
   
   echo "Ready to go for " + $uri
 
@@ -26,13 +30,20 @@ function load {
   cd ..
 }
 
-switch($platform) {
+ switch($platform) {
    "X64"   { break; } 
    "x86"   { break; } 
    "amd64" { $platform = "X64"; break; } 
-   default { "Platform was not recognized @ 'load-libraries.ps1' : " + $platform; exit (-1);  } 
-}
+   default { "load-libraries.ps1: platform <" + $platform + "> was not recognized"; exit (-1);  } 
+ }
 
-load "zlib"  $platform "release"
-load "libpng" $platform "release"
+ switch($configuration) {
+   "release"   { break; } 
+   "debug"     { break; } 
+   default     { "load-libraries.ps1: configuration <" + $configuration + "> was not recognized"; exit (-1);  } 
+ }
+
+
+load "zlib"  $platform $configuration
+load "libpng" $platform $configuration
 

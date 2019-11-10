@@ -1,7 +1,9 @@
 Param (
-#  Platform: either 'amd64' or 'x86'
+#  platform: either 'amd64' or 'x86'
 #            'X64' is accepted as well and converted to 'amd64'
    [parameter(Mandatory=$false)][string]$platform="amd64",
+#  platform: either 'debug' or 'release'
+   [parameter(Mandatory=$false)][string]$configuration="debug",
 # configure switch implies running vcvarsall.bat through CmdScript to inherit environment variables (local build)
    [parameter()][switch]$configure
 )
@@ -26,6 +28,13 @@ function CmdScript {
    "amd64" { break; } 
    default { "build.ps1: platform <" + $platform + "> was not recognized"; exit (-1);  } 
  }
+
+ switch($configuration) {
+   "release" { break; } 
+   "debug"   { break; } 
+   default   { "build.ps1: configuration <" + $configuration + "> was not recognized"; exit (-1);  } 
+ }
+
 
  $dname = "build"
 
