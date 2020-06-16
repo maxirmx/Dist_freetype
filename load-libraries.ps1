@@ -15,7 +15,7 @@ function load {
 
   $fname = $libname +".7z"
   $dname = $libname
-  $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $configuration + "/" + $fname
+  $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $configuration + "/"
   
   Write-Host "`nLoading $uri into $dname `n"
 
