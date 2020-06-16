@@ -17,7 +17,7 @@ function load {
   $dname = $libname
   $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $configuration + "/" + $fname
   
-  Write-Host "Loading $uri into $dname"
+  Write-Host "\nLoading $uri into $dname\n"
 
   New-Item -ItemType Directory -Force -Path $dname
 
