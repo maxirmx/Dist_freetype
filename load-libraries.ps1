@@ -15,9 +15,9 @@ function load {
 
   $fname = $libname +".7z"
   $dname = $libname
-  $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $configuration + "/"
+  $uri = "http://www.samsonov.net/wp/assets/Dist_" + $libname + "/" + $platform + "-" + $configuration + "/" + $fname
   
-  Write-Host "`nLoading $uri into $dname `n"
+  Write-Host "`nLoading $uri into $dname/$fname `n"
 
   New-Item -ItemType Directory -Force -Path $dname
 
