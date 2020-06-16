@@ -1,7 +1,7 @@
 environment:
   global:
     VisualStudio: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
-    freetype_version: "2-10-1"
+    freetype_version: "2-10-2"
   matrix:
   - library: static
   # library: shared
