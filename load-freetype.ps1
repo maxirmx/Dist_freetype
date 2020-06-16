@@ -11,8 +11,11 @@ $uri    =  "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/" +
 Invoke-WebRequest -Uri $uri -OutFile $fname2
 & "C:\Program Files\7-Zip\7z" -aoa x $fname2 
 & "C:\Program Files\7-Zip\7z" -aoa x $fname1 
-del $fname2
-del $fname1
-del pax_global_header
-ren $fname freetype
+
+Remove-Item $fname2
+Remove-Item $fname1
+Remove-Item pax_global_header
+
+Rename-Item -Path $fname -NewName freetype
+
 
