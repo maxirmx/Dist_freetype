@@ -25,7 +25,7 @@ function load {
 
   Invoke-WebRequest -Uri $uri -OutFile $fname
   & "C:\Program Files\7-Zip\7z" -aoa x $fname
-  del $fname
+  Remove-Item $fname
 
   cd ..
 }
