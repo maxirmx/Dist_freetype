@@ -1,5 +1,5 @@
 param (
-  [string] $version="2-10-1"
+  [string] $version="2-10-2"
 )
 
 $fname  = "freetype2-VER-" + $version 

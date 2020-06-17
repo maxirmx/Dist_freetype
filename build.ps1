@@ -53,6 +53,7 @@ function CmdScript {
                 "-D","PNG_LIBRARY=../../libpng/lib",
                 "-D","PNG_PNG_INCLUDE_DIR=../../libpng/include",
                 "-G","""NMake Makefiles""",
+		"-D","CMAKE_BUILD_TYPE=$configuration",
                 "..")
 
  $bp2 =  @("--build",  ".",

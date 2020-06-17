@@ -11,7 +11,7 @@ platform:
   - amd64
   
 configuration:
-  # release
+  - release
   - debug
 
 init:
@@ -24,7 +24,7 @@ install:
   - ps: ./load-libraries.ps1 $env:platform $env:configuration
   
 build_script:
-  - ps: ./build.ps1 $env:platform 
+  - ps: ./build.ps1 $env:platform $env:configuration
   
 test: off
 
