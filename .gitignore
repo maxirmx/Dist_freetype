@@ -1,4 +1,4 @@
 # Do not track build artifacts
-freetype/*
-zlib/*
-libpng/*
+local/freetype*/*
+local/zlib/*
+local/libpng/*
