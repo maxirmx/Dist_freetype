@@ -29,9 +29,5 @@ build_script:
   
 test: off
 
-#artifacts:
-   # path: zlib\zlib.lib
-   # path: zlib\zlib1.dll
-   # path: zlib\zdll.lib
-   # path: zlib\zlib.h
-
+artifacts:
+   - path: freetype-$env:freetype_version-win32.zip
