@@ -61,5 +61,6 @@ function CmdScript {
 
  & $cmake  $bp1
  & $cmake  $bp2
+ dir
 
  cd .. 
