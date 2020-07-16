@@ -22,8 +22,8 @@ switch($configuration) {
 }
 
 
-$fname = "$libname.7z"
-$fname_r = "$libname-$platform-$configuration.7z"
+$fname = "$libname.zip"
+$fname_r = "$libname-$platform-$configuration.zip"
 $dname = $libname
 $uri   = "https://github.com/maxirmx/Dist_$libname/releases/latest/download/$fname_r"
 
@@ -34,7 +34,7 @@ New-Item -ItemType Directory -Force -Path $dname
 cd $dname
 
 Invoke-WebRequest -Uri $uri -OutFile $fname
-& "C:\Program Files\7-Zip\7z" -aoa x $fname
+& "C:\Program Files\7-Zip\7z" -tzip -aoa x $fname
 Remove-Item $fname
 
 cd ..
