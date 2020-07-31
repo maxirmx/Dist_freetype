@@ -30,4 +30,4 @@ build_script:
 test: off
 
 artifacts:
- - path: "C:/projects/dist-freetype2/freetype/build/*.zip"
+ - path: "freetype/build/*.zip"
