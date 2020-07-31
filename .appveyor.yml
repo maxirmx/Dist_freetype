@@ -26,8 +26,11 @@ install:
   
 build_script:
   - ps: ./build.ps1 $env:platform $env:configuration
+
+after_build:
+  - ps: ./rename.ps1 $env:freetype_version
   
 test: off
 
 artifacts:
- - path: "freetype/build/freetype-" $env:freetype_version "-win32.zip"
+ - path: "freetype/build/freetype.zip"
