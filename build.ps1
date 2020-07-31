@@ -63,4 +63,4 @@ function CmdScript {
  & $cmake  $bp2
  dir
 
- cd .. 
+ cd ../.. 
