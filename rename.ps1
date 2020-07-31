@@ -21,6 +21,6 @@ switch($platform) {
 $v = $version.Replace("-",".")
 
 $old_path =   "./freetype/build/freetype-$v-$p.zip"
-$new_name =   "freetype-$platform-$configuration.zip"
+$new_name =   "freetype2-$platform-$configuration.zip"
 
 Rename-Item -Path $old_path -NewName $new_name
