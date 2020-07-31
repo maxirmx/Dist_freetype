@@ -10,9 +10,17 @@ Param (
 )
 
 
+switch($platform) {
+   "X64"   { $p = "win64"; break; } 
+   "x86"   { $p = "win32"; break; } 
+   "amd64" { $p = "win64"; break; }  
+   default { "rename.ps1: platform <$platform> was not recognized"; exit (-1);  } 
+}
+
+
 $v = $version.Replace("-",".")
 
-$old_path =   "./freetype/build/freetype-$v-win32.zip"
+$old_path =   "./freetype/build/freetype-$v-$p.zip"
 $new_name =   "freetype-$platform-$configuration.zip"
 
 Rename-Item -Path $old_path -NewName $new_name
