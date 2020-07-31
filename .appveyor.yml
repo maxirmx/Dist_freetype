@@ -19,7 +19,7 @@ init:
 
 install:
   # Get freetype2 source from GIT
-  - ps: ./load-freetype.ps1 %freetype_version%
+  - ps: ./load-freetype.ps1 $env:freetype_version
   # Load libraries (zlib, libpng)
   - ps: ./load-library.ps1 "ZLib"   %platform% %configuration%
   - ps: ./load-library.ps1 "libpng" %platform% %configuration%
