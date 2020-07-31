@@ -30,4 +30,4 @@ build_script:
 test: off
 
 artifacts:
-   - path: "freetype-$env:freetype_version-win32.zip"
+   - path: freetype-$(env:freetype_version)-win32.zip
