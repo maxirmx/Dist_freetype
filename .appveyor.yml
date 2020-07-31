@@ -33,7 +33,7 @@ after_build:
 test: off
 
 artifacts:
- - path: 'freetype/build/freetype-%platform%-%configuration%.zip'
+ - path: 'freetype/build/freetype2-%platform%-%configuration%.zip'
 
 deploy:
 - provider: GitHub
