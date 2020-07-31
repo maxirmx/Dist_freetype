@@ -1,5 +1,7 @@
 param (
-  [string] $version="2-10-2"
+#  version: freetype version
+#           someting like 2-10-20
+   [parameter(Mandatory=$true)][string]$version
 )
 
 $fname  = "freetype2-VER-$version" 
