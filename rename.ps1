@@ -5,8 +5,8 @@ Param (
 )
 
 
-$version.Replace("-",".")
+$v = $version.Replace("-",".")
 
-$old_path =   "./freetype/build/freetype-$version-win32.zip"
+$old_path =   "./freetype/build/freetype-$v-win32.zip"
 
 Rename-Item -Path $old_path -NewName "freetype.zip"
