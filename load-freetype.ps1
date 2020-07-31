@@ -20,4 +20,4 @@ Remove-Item pax_global_header
 
 Rename-Item -Path $fname -NewName freetype
 
-
+dir
