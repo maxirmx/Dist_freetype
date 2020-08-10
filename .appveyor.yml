@@ -15,11 +15,11 @@ configuration:
   - debug
 
 init:
-  - git submodule init
-  - git submodule update
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
+  - git submodule init
+  - git submodule update
   # Get freetype2 source from GIT
   - ps: ./load-freetype.ps1 $env:freetype_version
   # Load libraries (zlib, libpng)
