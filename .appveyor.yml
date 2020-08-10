@@ -24,7 +24,8 @@ install:
   # Get freetype2 source from GIT
   - ps: ./load-freetype.ps1 $env:freetype_version
   # Load libraries (zlib, libpng)
-  - ps: ./EZTools/load-library.ps1 "Zlib1"   $env:platform $env:configuration
+  - ps: ./EZTools/load-library.ps1 "Zlib"   $env:platform "funny"
+#$env:configuration
   - ps: ./EZTools/load-library.ps1 "libpng" $env:platform $env:configuration
   
 build_script:
