@@ -21,8 +21,8 @@ install:
   # Get freetype2 source from GIT
   - ps: ./load-freetype.ps1 $env:freetype_version
   # Load libraries (zlib, libpng)
-  - ps: ./load-library.ps1 "Zlib"   $env:platform $env:configuration
-  - ps: ./load-library.ps1 "libpng" $env:platform $env:configuration
+  - ps: ./EZTools/load-library.ps1 "Zlib"   $env:platform $env:configuration
+  - ps: ./EZTools/load-library.ps1 "libpng" $env:platform $env:configuration
   
 build_script:
   - ps: ./build.ps1 $env:platform $env:configuration
@@ -40,7 +40,7 @@ deploy:
 # I am tagging through github
 # Tag format is v<major version>.<minor version>, shall be consistent with major.monir of Appveyor build
 # release: v$(appveyor_build_version)
-  description: 'freetype2 appveyor build script [$(appveyor_build_version)] and binaries'
+  description: 'freetype2 appveyor build script [$(appveyor_build_version)] with binaries'
   auth_token:
     secure: 7fz/vsEpOOUyPYNmrykrY4lgqu3XQsag6g4x25nOwtd2dM2kc3X3GPoPzMCMDno/
   draft: false
