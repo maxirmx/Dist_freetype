@@ -8,20 +8,6 @@ Param (
    [parameter()][switch]$configure
 )
 
-# Invokes a Cmd.exe shell script and updates the environment.
-function CmdScript {
-  param(
-    [string] $scriptName
-  )
-  $cmdLine = """$scriptName"" $args & set"
-  & $Env:SystemRoot\system32\cmd.exe /c $cmdLine |
-  select-string '^([^=]*)=(.*)$' | foreach-object {
-    $varName = $_.Matches[0].Groups[1].Value
-    $varValue = $_.Matches[0].Groups[2].Value
-    set-item Env:$varName $varValue
-  }
-}
-
  switch($platform) {
    "X64"   { $platform = "amd64"; break;  } 
    "x86"   { break; } 
@@ -38,7 +24,7 @@ function CmdScript {
  $dname = "build"
 
  if ($configure) {
-  CmdScript "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" $platform
+  .\EZTools\cmd-script.ps1 "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" $platform
   $cmake = "C:\Program Files\CMake\bin\cmake" 
  } else {
   $cmake = "cmake"
