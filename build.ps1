@@ -34,11 +34,11 @@ Param (
  New-Item -ItemType Directory -Force -Path $dname
  cd $dname
 
- $bp1 =  @("-D","ZLIB_LIBRARY=../../zlib/lib",
+ $bp1 =  @("-G","""NMake Makefiles""",
+		"-D","ZLIB_LIBRARY=../../zlib/lib",
                 "-D","ZLIB_INCLUDE_DIR=../../zlib/include", 
                 "-D","PNG_LIBRARY=../../libpng/lib",
                 "-D","PNG_PNG_INCLUDE_DIR=../../libpng/include",
-                "-G","""NMake Makefiles""",
 		"-D","CMAKE_BUILD_TYPE=$configuration",
                 "-D","CPACK_INCLUDE_TOPLEVEL_DIRECTORY=false", 
                 "..")
