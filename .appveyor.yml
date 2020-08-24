@@ -47,14 +47,14 @@ after_build:
 test: off
 
 artifacts:
- - path: 'freetype/build/freetype-%platform%-%configuration%.zip'
+ - path: 'freetype-%platform%-%configuration%.zip'
 
 deploy:
 - provider: GitHub
 # I am tagging through github
 # Tag format is v<major version>.<minor version>, shall be consistent with major.monir of Appveyor build
 # release: v$(appveyor_build_version)
-  description: 'freetype2 appveyor build script [$(appveyor_build_version)] with binaries'
+  description: 'freetype appveyor build script [$(appveyor_build_version)] with binaries'
   auth_token:
     secure: 7fz/vsEpOOUyPYNmrykrY4lgqu3XQsag6g4x25nOwtd2dM2kc3X3GPoPzMCMDno/
   draft: false
