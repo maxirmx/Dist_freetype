@@ -57,8 +57,13 @@ function CmdScript {
                 "-D","CPACK_INCLUDE_TOPLEVEL_DIRECTORY=false", 
                 "..")
 
+# Manually packaged in .appveyor.yml script
+# $bp2 =  @("--build",  ".",
+#           "--target", "package")
+
  $bp2 =  @("--build",  ".",
-           "--target", "package")
+           "--target", "freetype")
+
 
  & $cmake  $bp1
  & $cmake  $bp2

@@ -31,12 +31,23 @@ build_script:
   - ps: ./build.ps1 $env:platform $env:configuration
 
 after_build:
-  - ps: ./rename.ps1 $env:freetype_version $env:platform $env:configuration
+  - mkdir d
+  - mkdir d\include
+  - mkdir d\include\freetype
+  - mkdir d\include\freetype\config
+  - mkdir d\lib
+  - copy freetype\build\freetyped.lib                          d\lib\freetype.lib
+  - copy freetype\build\CMakeFiles\freetype.dir\freetype.pdb   d\lib\freetype.pdb
+  - copy freetype\include\*.h                                  d\include  
+  - copy freetype\include\freetype\*.h                         d\include\freetype  
+  - copy freetype\include\freetype\config\*.h                  d\include\freetype\config  
+  - cd d
+  - 7z a -tzip -r -y ..\freetype-%platform%-%configuration%.zip *.*
   
 test: off
 
 artifacts:
- - path: 'freetype/build/freetype2-%platform%-%configuration%.zip'
+ - path: 'freetype/build/freetype-%platform%-%configuration%.zip'
 
 deploy:
 - provider: GitHub
