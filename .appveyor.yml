@@ -37,7 +37,7 @@ after_build:
   - mkdir d\include\freetype\config
   - mkdir d\lib
   - copy freetype\build\freetype*.lib                          d\lib\freetype.lib
-  - IF EXIST freetype\build\CMakeFiles\freetype.dir\freetype.pdb (copy freetype\build\CMakeFiles\freetype.dir\freetype.pdb d\lib\freetype.pdb)
+  - IF "%configuration%"=="debug"   (copy freetype\build\CMakeFiles\freetype.dir\freetype.pdb d\lib\freetype.pdb)
   - copy freetype\include\*.h                                  d\include  
   - copy freetype\include\freetype\*.h                         d\include\freetype  
   - copy freetype\include\freetype\config\*.h                  d\include\freetype\config  
