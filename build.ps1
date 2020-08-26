@@ -28,7 +28,6 @@ Param (
   $cmake = "cmake"
  }
 
-
 Set-Location "freetype"
 if (-Not (Test-Path "build")) {
  New-Item -ItemType Directory -Force -Path build
@@ -38,7 +37,6 @@ Set-Location "build"
 if (Test-Path "CMakeCache.txt") {
   Remove-Item "CMakeCache.txt"
 }
-
 
 $bp1 =  @("-G","""NMake Makefiles""",
 		"-D","ZLIB_LIBRARY=../../zlib/lib",
@@ -55,7 +53,6 @@ $bp1 =  @("-G","""NMake Makefiles""",
 
 $bp2 =  @("--build",  ".",
            "--target", "freetype")
-
 
 & $cmake  $bp1
 & $cmake  $bp2
