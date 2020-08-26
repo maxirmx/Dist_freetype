@@ -30,8 +30,6 @@ Param (
 
 
 Set-Location "freetype"
-
-
 if (-Not (Test-Path "build")) {
  New-Item -ItemType Directory -Force -Path build
 } 
@@ -40,7 +38,6 @@ Set-Location "build"
 if (Test-Path "CMakeCache.txt") {
   Remove-Item "CMakeCache.txt"
 }
-
 
 
 $bp1 =  @("-G","""NMake Makefiles""",
