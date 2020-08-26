@@ -21,8 +21,6 @@ Param (
    default   { "build.ps1: configuration <" + $configuration + "> was not recognized"; exit (-1);  } 
  }
 
- $dname = "build"
-
  if ($configure) {
   .\EZTools\cmd-script.ps1 "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" $platform
   $cmake = "C:\Program Files\CMake\bin\cmake" 
@@ -30,11 +28,22 @@ Param (
   $cmake = "cmake"
  }
 
- cd freetype
- New-Item -ItemType Directory -Force -Path $dname
- cd $dname
 
- $bp1 =  @("-G","""NMake Makefiles""",
+Set-Location "freetype"
+
+
+if (-Not (Test-Path "build")) {
+ New-Item -ItemType Directory -Force -Path build
+} 
+Set-Location "build"
+
+if (Test-Path "CMakeCache.txt") {
+  Remove-Item "CMakeCache.txt"
+}
+
+
+
+$bp1 =  @("-G","""NMake Makefiles""",
 		"-D","ZLIB_LIBRARY=../../zlib/lib",
                 "-D","ZLIB_INCLUDE_DIR=../../zlib/include", 
                 "-D","PNG_LIBRARY=../../libpng/lib",
@@ -47,11 +56,11 @@ Param (
 # $bp2 =  @("--build",  ".",
 #           "--target", "package")
 
- $bp2 =  @("--build",  ".",
+$bp2 =  @("--build",  ".",
            "--target", "freetype")
 
 
- & $cmake  $bp1
- & $cmake  $bp2
+& $cmake  $bp1
+& $cmake  $bp2
 
- cd ../.. 
+Set-Location "../.."
