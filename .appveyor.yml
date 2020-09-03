@@ -29,7 +29,7 @@ install:
   
 build_script:
   - ps: ./build-freetype.ps1 $env:platform $env:configuration
-   -ps: ./EZTools/install-pdb.ps1 ./d ./freetype/build
+  - ps: ./EZTools/install-pdb.ps1 ./d ./freetype/build
 
 after_build:
   - cd d
