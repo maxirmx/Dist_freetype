@@ -34,7 +34,7 @@ build_script:
 after_build:
   - cd d
   - rmdir /s /q lib\cmake
-  - 7z a -tzip -r -y ..\podofo-%platform%-%configuration%.zip *.*
+  - 7z a -tzip -r -y ..\freetype-%platform%-%configuration%.zip *.*
   
 test: off
 
