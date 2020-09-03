@@ -29,20 +29,15 @@ install:
   
 build_script:
   - ps: ./build-freetype.ps1 $env:platform $env:configuration
+   -ps: ./EZTools/install-pdb.ps1 ./d ./freetype/build
 
 after_build:
-  - mkdir d
-  - mkdir d\include
-  - mkdir d\include\freetype
-  - mkdir d\include\freetype\config
-  - mkdir d\lib
-  - IF "%configuration%"=="debug"   (copy freetype\build\freetyped.lib d\lib\freetype.lib) ELSE (copy freetype\build\freetype.lib d\lib\freetype.lib)
-  - IF "%configuration%"=="debug"   (copy freetype\build\CMakeFiles\freetype.dir\freetype.pdb d\lib\freetype.pdb)
-  - copy freetype\include\*.h                                  d\include  
-  - copy freetype\include\freetype\*.h                         d\include\freetype  
-  - copy freetype\include\freetype\config\*.h                  d\include\freetype\config  
   - cd d
-  - 7z a -tzip -r -y ..\freetype-%platform%-%configuration%.zip *.*
+  - rmdir /s /q lib\cmake
+  - move include\freetype2\*.* include
+  - move include\freetype2\freetype include
+  - rmdir /s /q include\freetype2
+  - 7z a -tzip -r -y ..\podofo-%platform%-%configuration%.zip *.*
   
 test: off
 

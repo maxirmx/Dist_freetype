@@ -17,5 +17,6 @@ IF NOT EXIST zlib     (powershell -ExecutionPolicy Bypass .\EZTools\load-library
 IF NOT EXIST libpng   (powershell -ExecutionPolicy Bypass .\EZTools\load-library.ps1 libpng %1 %2)
 
 powershell -ExecutionPolicy Bypass .\build-freetype.ps1 %1 %2 -configure
+powershell -ExecutionPolicy Bypass .\EZTools\install-pdb.ps1 .\d .\freetype\build
 
 cd %~dp0

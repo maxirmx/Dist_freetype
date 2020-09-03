@@ -28,6 +28,8 @@ Param (
   $cmake = "cmake"
  }
 
+$dname = Get-Location
+
 Set-Location "freetype"
 if (-Not (Test-Path "build")) {
  New-Item -ItemType Directory -Force -Path build
@@ -44,6 +46,8 @@ $bp1 =  @("-G","""NMake Makefiles""",
                 "-D","PNG_LIBRARY=../../libpng/lib",
                 "-D","PNG_PNG_INCLUDE_DIR=../../libpng/include",
 		"-D","CMAKE_BUILD_TYPE=$configuration",
+		"-D","CMAKE_INSTALL_PREFIX=""$dname\d""",
+		"-D","DISABLE_FORCE_DEBUG_POSTFIX=true",
                 "-D","CPACK_INCLUDE_TOPLEVEL_DIRECTORY=false", 
                 "..")
 
@@ -52,9 +56,9 @@ $bp1 =  @("-G","""NMake Makefiles""",
 #           "--target", "package")
 
 $bp2 =  @("--build",  ".",
-           "--target", "freetype")
+           "--target", "install")
 
 & $cmake  $bp1
 & $cmake  $bp2
 
-Set-Location "../.."
+Set-Location $dname
