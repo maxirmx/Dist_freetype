@@ -56,7 +56,7 @@ $bp1 =  @("-G","""NMake Makefiles""",
 #           "--target", "package")
 
 $bp2 =  @("--build",  ".",
-           "--target", "install")
+          "--target", "install")
 
 & $cmake  $bp1
 & $cmake  $bp2

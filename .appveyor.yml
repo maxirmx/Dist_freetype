@@ -34,9 +34,6 @@ build_script:
 after_build:
   - cd d
   - rmdir /s /q lib\cmake
-  - move include\freetype2\*.* include
-  - move include\freetype2\freetype include
-  - rmdir /s /q include\freetype2
   - 7z a -tzip -r -y ..\podofo-%platform%-%configuration%.zip *.*
   
 test: off
