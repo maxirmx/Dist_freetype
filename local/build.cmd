@@ -1,7 +1,7 @@
 @echo off
 rem --------------------------------------------------------------------
 rem A script to build and test install podofo locally
-rem Usage test.cmd <platform> <configuration>
+rem Usage build.cmd <platform> <configuration>
 rem        platform: either 'X64' or 'x86'
 rem                  'amd64' is accepted as well and converted to 'X64'
 rem                   (load-library) default is 'X64'
